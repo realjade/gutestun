@@ -1,35 +1,17 @@
-*.py[cod]
-
-# C extensions
-*.so
-
-# Packages
-*.egg
-*.egg-info
-dist
+*.pyc
+*.db
+*.mp4
+*.flv
+*~
 build
-eggs
-parts
-bin
-var
-sdist
-develop-eggs
-.installed.cfg
-lib
-lib64
-
-# Installer logs
-pip-log.txt
-
-# Unit test / coverage reports
-.coverage
-.tox
-nosetests.xml
-
-# Translations
-*.mo
-
-# Mr Developer
-.mr.developer.cfg
+.svn
+.DS_Store
+logs/vself.log
+config.py
+static/videos
+static/avatars
+static/attachment
+*.sql
 .project
 .pydevproject
+.settings
