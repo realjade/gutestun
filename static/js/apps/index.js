@@ -1,5 +1,18 @@
 $(function(){
 	var map = new BMap.Map("container");    
-	var point = new BMap.Point(116.404, 39.915);    
-	map.centerAndZoom(point, 15);  // 编写自定义函数，创建标注 
+	var point = new BMap.Point(116.404, 39.915);
+	map.centerAndZoom(point, 15);  // 编写自定义函数，创建标注
+	var listener1 = BMapLib.EventWrapper.addListener(map, 'click', function(e){
+	    showEvent(e);
+	});
+	var eventList = $('#event-list');
+	function showEvent (event){
+	    var newLine = '';
+	    if (!event) { // 手动触发的事件可能没有事件参数，注意需要判断
+	        newLine = '手动触发了一个事件';
+	    } else { // 注意即使有event对象，但不保证type和target属性都包含，手动触发的事件参数内容是自定义的
+	        newLine = event.type + ' event from ' + event.target;
+	    }
+	    eventList.html(newLine + '<br />' + eventList.html());
+	}
 });
