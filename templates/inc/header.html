@@ -7,11 +7,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a href="/" class="logo"><img src="{{ '/static/images/logo/logo.png'|staticurl }}" alt="gutestun" /></a>
+          <a href="/" class="logo"><img src="{{ '/static/images/logo/logo.png'|staticurl }}" alt="JSPASS" /></a>
           <div class="nav-collapse collapse navbar-responsive-collapse">
             <ul class="nav">
-                <li class="{{'active'|ifdefault(tab=='codetools')}}"><a href="/">首页</a></li>
-                <li class="{{'active'|ifdefault(tab=='html5')}}"><a href="/html5/">管理</a></li>
+                <li class="{{'active'|ifdefault(tab=='codetools')}}"><a href="/">CodeTools</a></li>
+                <li class="{{'active'|ifdefault(tab=='html5')}}"><a href="/html5/">HTML5</a></li>
                 <li class="{{'active'|ifdefault(tab=='discuss')}}"><a href="/discuss/">讨论区</a></li>
                 <li class="{{'active'|ifdefault(tab=='example')}}"><a href="/example/">示例区</a></li>
                 <li class="dropdown {{'active'|ifdefault(tab=='resource')}}">
@@ -34,8 +34,20 @@
                   <button class="btn" type="submit">搜索</button>
                 </div>
             </form>
-          </div>
+            <ul class="nav pull-right">
+                <li class="divider-vertical"></li>
+                {% if g.user %}
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">欢迎您：{{ g.user.username }}</a>
+                    </li>
+                    <li><a href="/logout/">退出</a></li>
+                {% else %}
+                    <li><a data-target="#loginpanel" data-toggle="modal">登录</a></li>
+                    <li><a data-target="#registerpanel" data-toggle="modal">注册</a></li>
+                {% endif %}
+              </ul>
+          </div><!-- /.nav-collapse -->
         </div>
-      </div>
+      </div><!-- /navbar-inner -->
     </div>
 </header>

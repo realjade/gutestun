@@ -14,3 +14,7 @@ module = Blueprint('main', __name__)
 @module.route('/')
 def index():
     return render_template('index.html')
+
+@module.route('/test/')
+def test():
+    return render_template('test.html')

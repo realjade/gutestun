@@ -1,7 +1,14 @@
 $(function(){
-	var map = new BMap.Map("container");    
+	var map = new BMap.Map("map");    
 	var point = new BMap.Point(116.404, 39.915);
 	map.centerAndZoom(point, 15);  // 编写自定义函数，创建标注
+	function myFun(result){
+		tools.log(result);
+	    var cityName = result.name;
+	    map.setCenter(cityName);
+	}
+	var myCity = new BMap.LocalCity();
+	myCity.get(myFun);
 	var listener1 = BMapLib.EventWrapper.addListener(map, 'click', function(e){
 	    showEvent(e);
 	});
