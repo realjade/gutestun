@@ -13,8 +13,8 @@ module = Blueprint('main', __name__)
 
 @module.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', tab = 'index')
 
 @module.route('/test/')
 def test():
-    return render_template('test.html')
+    return render_template('test.html', tab = 'test')
