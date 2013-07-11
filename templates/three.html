@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block stylesheets %}
+  <link type="text/css" rel="stylesheet" href="{{ '/static/css/apps/index.css'|staticurl }}" />
+{% endblock %}
+{% block scripts %}
+  <script src="{{ '/static/js/lib/map/EventWrapper.js'|staticurl }}"></script>
+  <script src="{{ '/static/js/lib/three.min.js'|staticurl }}"></script>
+  <script src="{{ '/static/js/apps/three.js'|staticurl }}"></script>
+{% endblock %}
+{% block mainbody %}
+<div class="center">
+    <div class="main-left">
+        
+    </div>
+    <div class="main-right">
+    	<div class="webgl"></div>
+    </div>
+</div>
+{% endblock %}
