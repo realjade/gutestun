@@ -2,7 +2,7 @@ $(function(){
 	var map = new BMap.Map("map");    
 	var point = new BMap.Point(116.404, 39.915);
 	map.centerAndZoom(point, 15);  // 编写自定义函数，创建标注
-	function myFun(result){
+	/*function myFun(result){
 		tools.log(result);
 	    var cityName = result.name;
 	    map.setCenter(cityName);
@@ -22,4 +22,14 @@ $(function(){
 	    }
 	    eventList.html(newLine + '<br />' + eventList.html());
 	}
+	map.centerAndZoom(point, 15);*/
+	var polyline = new BMap.Polyline([
+	  new BMap.Point(116.399, 39.910),
+	  new BMap.Point(116.405, 39.920),
+	  new BMap.Point(116.425, 39.900)
+	], {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5});
+	map.addOverlay(polyline);
+	var listener1 = BMapLib.EventWrapper.addListener(polyline, 'mouseover', function(e){
+	    tools.log(e);
+	});
 });
