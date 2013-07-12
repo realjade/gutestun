@@ -18,3 +18,7 @@ def index():
 @module.route('/test/')
 def test():
     return render_template('test.html', tab = 'test')
+
+@module.route('/three/')
+def three():
+    return render_template('three.html',tab = 'tree')
